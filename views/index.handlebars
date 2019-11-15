@@ -1,0 +1,33 @@
+<header>
+    <div id="imageHolder"><img id="logo" src="/assets/images/jbc.png" alt="Hamburger logo"></div>
+    <h1>Eat Da Burger</h1>
+</header>
+<main>
+    <div id="burgersHolder">
+        <div id="readyToEat">
+            <h2>Ready to Eat</h2>
+            {{#each readyToEatBurgers}}
+            <div>
+                <h3>{{this.burger_name}}</h3>
+                <button onclick="update({{this.id}})">Devour It!</button>
+            </div>
+            {{/each}}
+        </div>
+        <div id="devoured">
+            <h2>Devoured</h2>
+            {{#each devouredBurgers}}
+            <div>
+                <h3>{{this.burger_name}}</h3>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <form id="newBurger">
+        <label for="newBurgerName">Enter the name of a burger you'd like to eat and then click "Submit".</label>
+        <input type="text" id="newBurgerName" name="name">
+        <button id="submit" type="submit">Submit</button>
+    </form>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/userLogic.js"></script>
